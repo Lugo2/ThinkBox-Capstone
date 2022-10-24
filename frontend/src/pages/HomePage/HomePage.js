@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -28,13 +29,25 @@ const HomePage = () => {
   }, [token]);
   return (
     <div className="container">
-      <h1>Home Page for {user.username}!</h1>
+      {/* <h1>Home Page for {user.username}!</h1> */}
       {cars &&
         cars.map((car) => (
           <p key={car.id}>
             {car.year} {car.model} {car.make}
           </p>
         ))}
+        <body>
+          <div class = "container">
+            <a href="/before">
+              <button type="submit" className="btn btn-brimary mb-2">Create Journal Entry</button>
+            </a>
+          </div>
+          <div class = "container">
+            <a href="/progress">
+              <button type="submit" className="btn btn-brimary mb-2">View Journal Progress</button>
+            </a>
+          </div>
+        </body>
     </div>
   );
 };

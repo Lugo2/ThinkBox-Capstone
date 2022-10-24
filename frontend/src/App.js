@@ -10,6 +10,7 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import JournalPage from "./pages/JournalPage/JournalPage";
 import ProgressPage from "./pages/ProgressPage/ProgressPage";
 import AuthorPage from "./pages/AuthorPage/AuthorPage";
+import BeforeJournalEntryPage from "./pages/BeforeJournalEntryPage/BeforeJournalEntryPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -45,6 +46,7 @@ function App() {
         <Route path="/journal" element={<PrivateRoute><JournalPage JournalPageProperty = {entries}/></PrivateRoute>} />
         <Route path="/progress" element={<PrivateRoute><ProgressPage ProgressPageProperty = {entries}/></PrivateRoute>} />
         <Route path="/author" element={<PrivateRoute><AuthorPage AuthorPageProperty = {entries}/></PrivateRoute>} />
+        <Route path="/before" element={<PrivateRoute><BeforeJournalEntryPage BeforeJournalEntryPageProperty = {entries}/></PrivateRoute>} />
       </Routes>
       <Footer />
     </div>

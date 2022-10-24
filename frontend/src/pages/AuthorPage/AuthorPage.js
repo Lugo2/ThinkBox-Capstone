@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 
 
 const AuthorPage = (props) => {
     const [showAuthor, setShowAuthor] = useState([]);
-    const[token] = useAuth();
+    const [token] = useAuth();
 
         const findAuthors = async () => {
 
@@ -29,18 +29,18 @@ const AuthorPage = (props) => {
                 console.log(error.response.data)
             }
         };
-        // findAuthors();
         
     
     return (
     <form onSubmit={findAuthors} className='form-inline'>
         <div className='form-group mx-sm-3 mb-2'>
             <label className="sr-only"><b>SEARCH</b></label>
-            <input placeholder='Enter a Game Title:' className="form-control" type='text' value={showAuthor} onChange={(event) => setShowAuthor(event.target.value)} />
+            <input placeholder='Search Author' className="form-control" type='text' value={showAuthor} onChange={(event) => setShowAuthor(event.target.value)} />
         </div>
         <div>
             <button type='submit' className="btn btn-primary mb-2">Submit</button>
         </div>
+
     </form>
     );
 };
